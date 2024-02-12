@@ -415,7 +415,7 @@ header h1 {
 }
 
 #hero {
-  background: linear-gradient(#0E0E1E, rgba(14, 14, 30, 0.4)), url("/img/hero2.jpg") no-repeat center/cover;
+  background: linear-gradient(#0E0E1E, rgba(14, 14, 30, 0.4)), url("../img/hero2.jpg") no-repeat center/cover;
   height: 45vh;
 }
 
