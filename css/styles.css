@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Jura";
+  src: url("fonts/Jura.ttf");
+  font-weight: 400;
+}
 /* Mixins for breakpoints */
 /* Mixins End */
 .row {
@@ -18,22 +23,22 @@
 }
 @media (min-width: 540px) {
   .row {
-    max-width: "540px";
+    max-width: 540px;
   }
 }
 @media (min-width: 768px) {
   .row {
-    max-width: "768px";
+    max-width: 768px;
   }
 }
 @media (min-width: 992px) {
   .row {
-    max-width: "992px";
+    max-width: 992px;
   }
 }
 @media (min-width: 1200px) {
   .row {
-    max-width: "1200px";
+    max-width: 1200px;
   }
 }
 
@@ -393,14 +398,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #0E0E1E;
+}
+*:before, *:after {
+  box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Jura";
-  src: url("fonts/Jura.ttf");
-  font-weight: 400;
+html {
+  background: #0E0E1E;
+  color: #e8e8e8;
+  font-family: "Juera", Arial, sansSerif;
 }
+
 header {
   display: flex;
   align-items: center;
