@@ -432,7 +432,7 @@ header h1 {
   font-size: 1.2rem;
 }
 .section .img1 {
-  width: 100%;
+  width: 80%;
   padding: 2rem;
 }
 
@@ -456,4 +456,21 @@ header h1 {
   width: 99%;
   height: auto;
   padding: 1.2rem;
+}
+
+.section3 {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section3 h2 {
+  color: #e8e8e8;
+  font-family: "Jura", Courier, monospace;
+  font-size: 1.8rem;
+}
+.section3 img {
+  max-width: 33%;
+  padding: 1rem;
 }/*# sourceMappingURL=styles.css.map */
