@@ -1,6 +1,7 @@
 header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 55px;
     background-color: $primary;
@@ -12,7 +13,147 @@ header {
         font-family: 'Jura';
     }
 
-}
+    nav {
+        @include bp-medium {
+          ul {
+          
+            list-style-type: none;
+            border-radius: 10px;
+            margin-right: 1rem;
+    
+            li {
+                display: inline-block;
+              
+    
+              a {
+                display: block;
+                padding: 10px;
+                color: #dee8ed;
+                text-decoration: none;
+                font-family: $mainFont;
+                &:hover {
+                    border-bottom: 2px solid $secondary;
+                  } 
+              }
+    
+        
+            }
+          }
+        }
+        
+      }
+    }
+    .mobileNav {
+        //höhe ist null 
+        max-height: 0;
+        display: none;
+        //verzögert effekt zwischen block
+        // ease-out 
+        transition: all .5 ease-out;
+        transition-property: max-height, display;
+      
+      }
+      .hamb {
+        //styling von maus
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 4%;
+        padding: 40px 20px;
+      
+      .hamb-line {
+        background-color: $light;
+        display: block;
+        width: 24px;
+        height: 2px;
+        position: relative;
+        z-index: 999;
+      
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          background: $light;
+          width: 100%;
+          height: 100%;
+          transition: all .2 ease-out;
+        }
+        &::before {
+          top: 5px;
+        }
+        &::after {
+          top: -5px;
+        }
+      }
+      }
+      
+      .side-menu {
+        display: none;
+        //vor  nach dem klicken
+      &:checked ~ {
+        nav{
+          max-height: 100%;
+          display: block;
+      
+          ul {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .8);
+            z-index: 10;
+            //flexbox
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      
+      
+            li {
+              display: block;
+              list-style: none;
+              margin: .6rem;
+
+      
+              a{
+                color: $light;
+               
+              }
+      
+            }
+          }
+        }
+        .hamb {
+          // hamburgerlinien
+          .hamb-line{
+            background: transparent;
+      
+            &::before {
+              transform: rotate(-45deg);
+              top: 0;
+            }
+            &::after {
+              transform: rotate(405deg);
+              top: 0;
+      
+            }
+          }
+        }
+      }
+      }
+      @include bp-medium {
+        .side-menu, .hamb {
+          display: none;
+        }
+        .mobileNav {
+          max-height: 100%;
+          display: block;
+        }
+      }
+
+
 
 #hero {
     background: linear-gradient($primary, rgba($primary, 0.4)),
@@ -80,7 +221,13 @@ header {
     }
 
     img {
-        max-width: 33%;
+        max-width: 45%;
         padding: 1rem;
+    }
+
+    .zentrieren {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
