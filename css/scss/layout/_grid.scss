@@ -1,8 +1,8 @@
 $bp: (
-  "small": 540px,
-  "medium": 768px, 
-  "large": 992px,
-  "giant": 1200px  
+  "small": "540px",
+  "medium": "768px",
+  "large": "992px",
+  "giant": "1200px"
 );
 $small: map-get($bp, "small");
 $medium: map-get($bp, "medium"); 
@@ -106,3 +106,28 @@ $giant: map-get($bp, "giant");
   
 
 
+
+/* Mixins for breakpoints */
+@mixin bp-small {
+  @media (min-width: #{$small}) { 
+      @content;  
+  }
+}
+
+@mixin bp-medium {
+  @media (min-width: #{$medium}) { 
+      @content;  
+  }
+}
+
+@mixin bp-large {
+  @media (min-width: #{$large}) { 
+      @content;  
+  }
+}
+
+@mixin bp-giant {
+  @media (min-width: #{$giant}) { 
+      @content;  
+  } 
+}

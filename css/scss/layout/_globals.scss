@@ -1,19 +1,22 @@
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 
-    &:before, 
-    &:after{
-      box-sizing: border-box;
-    }
-
-    // Background muss wo anders definiert werden
-    
+  &:before,
+  &:after{
+    box-sizing: border-box;
   }
 
-  html{
+    //backgound muss wo anders defeniert werden
+    //background-color: $primary;
+  }
+
+  html {
     background: $primary;
     color: $light;
     font-family: $mainFont;
   }
+

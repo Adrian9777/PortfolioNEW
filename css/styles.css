@@ -394,6 +394,7 @@
   }
 }
 
+/* Mixins for breakpoints */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -406,12 +407,13 @@
 html {
   background: #0E0E1E;
   color: #e8e8e8;
-  font-family: jura, Arial, sansSerif;
+  font-family: "Juera", Arial, sansSerif;
 }
 
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 55px;
   background-color: #0E0E1E;
@@ -421,7 +423,114 @@ header h1 {
   margin-left: 2rem;
   font-family: "Jura";
 }
+@media (min-width: 768px) {
+  header nav ul {
+    list-style-type: none;
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
+  header nav ul li {
+    display: inline-block;
+  }
+  header nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #dee8ed;
+    text-decoration: none;
+    font-family: "Juera", Arial, sansSerif;
+  }
+  header nav ul li a:hover {
+    border-bottom: 2px solid #FF560F;
+  }
+}
 
+.mobileNav {
+  max-height: 0;
+  display: none;
+  transition: all 0.5 ease-out;
+  transition-property: max-height, display;
+}
+
+.hamb {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 4%;
+  padding: 40px 20px;
+}
+.hamb .hamb-line {
+  background-color: #e8e8e8;
+  display: block;
+  width: 24px;
+  height: 2px;
+  position: relative;
+  z-index: 999;
+}
+.hamb .hamb-line::before, .hamb .hamb-line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #e8e8e8;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2 ease-out;
+}
+.hamb .hamb-line::before {
+  top: 5px;
+}
+.hamb .hamb-line::after {
+  top: -5px;
+}
+
+.side-menu {
+  display: none;
+}
+.side-menu:checked ~ nav {
+  max-height: 100%;
+  display: block;
+}
+.side-menu:checked ~ nav ul {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.side-menu:checked ~ nav ul li {
+  display: block;
+  list-style: none;
+  margin: 0.6rem;
+}
+.side-menu:checked ~ nav ul li a {
+  color: #e8e8e8;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(405deg);
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  .side-menu, .hamb {
+    display: none;
+  }
+  .mobileNav {
+    max-height: 100%;
+    display: block;
+  }
+}
 #hero {
   background: linear-gradient(#0E0E1E, rgba(14, 14, 30, 0.4)), url("../img/hero2.jpg") no-repeat center/cover;
   height: 45vh;
@@ -479,6 +588,11 @@ header h1 {
   font-size: 1.8rem;
 }
 .section3 img {
-  max-width: 33%;
+  max-width: 45%;
   padding: 1rem;
+}
+.section3 .zentrieren {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
