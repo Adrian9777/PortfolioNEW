@@ -1,18 +1,18 @@
 $bp: (
-  "small": "540px",
-  "medium": "768px",
-  "large": "992px",
-  "giant": "1200px"
+  "small": 540px,
+  "medium": 768px, 
+  "large": 992px,
+  "giant": 1200px  
 );
 $small: map-get($bp, "small");
-$medium: map-get($bp, "medium");
+$medium: map-get($bp, "medium"); 
 $large: map-get($bp, "large");
 $giant: map-get($bp, "giant");
 
 /* Mixins for breakpoints */
 @mixin bp-small {
   @media (min-width: #{$small}) { 
-      @content;  
+      @content;   
   }
 }
 
@@ -24,12 +24,12 @@ $giant: map-get($bp, "giant");
 
 @mixin bp-large {
   @media (min-width: #{$large}) { 
-      @content;  
+      @content;   
   }
 }
 
 @mixin bp-giant {
-  @media (min-width: #{$giant}) { 
+  @media (min-width: #{$giant}) {  
       @content;  
   } 
 }
